@@ -3,7 +3,7 @@ struct edge {
 	ll cap;   // пропускная способность ребра
 	ll flow;  // поток, текущий по ребру
 
-	edge() { to = -1; cap = -1; flow = -1; } // хуйня майкрософта не дает скомпилить без конструктора по умолчанию, не ебу почему. надеюсь, когда-нибудь мы перейдем на другой компилятор
+	edge() { to = -1; cap = -1; flow = -1; }
 
 	edge(ll _to, ll _cap, ll _flow) {
 		to = _to; cap = _cap; flow = _flow;
@@ -44,7 +44,7 @@ ll dfs(ll v, ll delta) {
 		}
 
 		ll new_delta = dfs(edges[edg_ind].to, min(delta, edges[edg_ind].res()));
-		if (new_delta > 0) { // если нихуя не понятно, то лучше сохранять предка и потом в конце отдельно все это сделать, если че обьясню
+		if (new_delta > 0) {
 			edges[edg_ind].flow += new_delta;
 			edges[edg_ind ^ 1].flow -= new_delta;
 			return new_delta;

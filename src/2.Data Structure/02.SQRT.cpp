@@ -1,19 +1,19 @@
-ll n; // размер исходного массива
+ll n;
 const int maxn = 2 * 1e5, c = 448; //c=sqrt(maxn)
 vll arr(maxn), block(c), add(c);
 
-void calc_sqrt() {//заполняем sqrt
+void calc_sqrt() {
     for (ll i = 0; i < n; i++) {
         block[i / c] += arr[i];
     }
 }
 
-ll sum(ll l, ll r) { // sum[l;r] индексы с 0 
+ll sum(ll l, ll r) {
     ll res = 0;
     while (l <= r) {
-        if (l % c == 0 && l + c - 1 <= r) {// если мы находимся в начале блока и он целиком в запросе
+        if (l % c == 0 && l + c - 1 <= r) {
             res += block[l / c];
-            l += c; // мы можем прыгнуть сразу на блок
+            l += c;
         }
         else {
             res += arr[l] + add[l / c];

@@ -1,7 +1,7 @@
 class segtree {
 private:
 
-	struct node { // вынести в глобал, если нужно
+	struct node {
 		ll suma;
 	};
 

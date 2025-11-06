@@ -34,8 +34,8 @@ const ll inf = 1e18;
 mt19937 rnd(4321);
 //mt19937 rnd(chrono::steady_clock::now().time_since_epoch().count());
 ll random(ll l, ll r) { return (rnd() % (++r - l) + l); } //random in [l...r]
-/* cout << fixed; - убрать экспоненциальный вывод.
- cout << setprecision(10); - вывод с заданной точностью.
+/* cout << fixed;
+ cout << setprecision(10);
  work with #include <iomanip> */
 
 signed main() {
